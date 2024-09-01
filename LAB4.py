@@ -1,95 +1,95 @@
 # Write a program to enter a string. Calculate the length of the string. Find the substring country. Count the occurences of each word in the given sentence.
 # If the String as input is India is my motherland. I love my country. Capital of India is New Delhi.
 
-# def string_inp():
-#     str1="India is my motherland. I love my country. Capital of India is New Delhi"
-#     print("Length of string= ",len(str1))
-#     if 'country' in str1:
-#         print("'country' is present in the string")
-#     else:
-#         print("'country' is not present in the string")
+def string_inp():
+    str1="India is my motherland. I love my country. Capital of India is New Delhi"
+    print("Length of string= ",len(str1))
+    if 'country' in str1:
+        print("'country' is present in the string")
+    else:
+        print("'country' is not present in the string")
 
-#     words=str1.split()
-#     word_count={}
-#     for word in words:
-#         word=word.strip(".,") #Remove Punctuations
-#         if word in word_count:
-#            word_count[word] +=1
-#         else:
-#            word_count[word]=1
-#     print("Word occurences:- ")
-#     for word,count in word_count.items():
-#         print(word,":",count)
-# string_inp()
+    words=str1.split()
+    word_count={}
+    for word in words:
+        word=word.strip(".,") #Remove Punctuations
+        if word in word_count:
+           word_count[word] +=1
+        else:
+           word_count[word]=1
+    print("Word occurences:- ")
+    for word,count in word_count.items():
+        print(word,":",count)
+string_inp()
 
 # Write a program that accepts a comma separated sequence of words as input and prints the words in a comma-separated sequence after sorting them alphabetically. 
 # Suppose the following input is supplied to the program: without,hello,bag,world Then, the output should be: bag,hello,without,world.
 
-# def str_input():
-#     str= "without,hello,bag,world"
-#     words=str.split(',')    
-#     words.sort()
-#     sorted_words=(','.join(words))
-#     print(sorted_words)
+def str_input():
+    str= "without,hello,bag,world"
+    words=str.split(',')    
+    words.sort()
+    sorted_words=(','.join(words))
+    print(sorted_words)
 
-# str_input()
+str_input()
 
 # Write a program that accepts sequence of lines as input and prints the lines after making all characters in the sentence capitalized. 
 # Suppose the following input is supplied to the program: Hello world Practice makes perfectThen, the output should be:HELLO WORLD PRACTICE MAKES PERFECT
 
-# def upper_str():
-#     lines= [
-#         "Hello World", 
-#         "Practice makes perfect"
-#     ]
-#     upper_str1=[lines.upper() for line in lines]
-#     for line in upper_str1:
-#         print(line)
-# upper_str()                    #something is wrong in this snippet
+def upper_str():
+    lines= [
+        "Hello World", 
+        "Practice makes perfect"
+    ]
+    upper_str1=[lines.upper() for line in lines]
+    for line in upper_str1:
+        print(line)
+upper_str()                    #something is wrong in this snippet
 
 #  Write a program that accepts a sequence of whitespace separated words as input and prints the words after removing all duplicate words and sorting them alphanumerically.
 # Suppose the following input is supplied to the program: hello world and practice makes perfect and hello world again Then, the output should be:
 # again and hello makes perfect practice world
 
-# def duplic_remove():
-#     str1="hello world and practice makes perfect and hello world again"
-#     str2=str1.split()
-#     uniq_str2=sorted(set(str2))
-#     result=' '.join(uniq_str2)
-#     print(result)
+def duplic_remove():
+    str1="hello world and practice makes perfect and hello world again"
+    str2=str1.split()
+    uniq_str2=sorted(set(str2))
+    result=' '.join(uniq_str2)
+    print(result)
 
-# duplic_remove()
+duplic_remove()
 
 # # Write a program that accepts a sentence and calculate the number of letters and digits.Suppose the following input is supplied to the program:
 # # hello world! 123 Then, the output should be:LETTERS 10 DIGITS 3
 
-# def letDig():
-#     inp_str= "hello world! 123"
-#     letters=sum(c.isalpha() for c in inp_str)
-#     digits=sum(c.isdigit() for c in inp_str)
-#     print(f"LETTERS= {letters}")
-#     print(f"DIGITS= {digits}")
-# letDig()
+def letDig():
+    inp_str= "hello world! 123"
+    letters=sum(c.isalpha() for c in inp_str)
+    digits=sum(c.isdigit() for c in inp_str)
+    print(f"LETTERS= {letters}")
+    print(f"DIGITS= {digits}")
+letDig()
 
 # # Write a program which accepts a string as input to print "Yes" if the string is "yes" or "YES" or "Yes" , otherwise print "No".
 
-# def str_check():
-#     str1=input("Enter a string: ")
-#     if str1.lower()== "yes":
-#         print("Yes")
-#     else:
-#         print("No")
-# str_check()
+def str_check():
+    str1=input("Enter a string: ")
+    if str1.lower()== "yes":
+        print("Yes")
+    else:
+        print("No")
+str_check()
 
 # Write a program which accepts a sequence of words separated by whitespace as input to print the words composed of digits only. Example:
 # If the following words is given as input to the program:2 cats and 3 dogs. Then, the output of the program should be:
 # ['2','3'].... In case of input data being supplied to the question, it should be assumed to be a console input.
 
-# def check_digs_only():
-#     str2="2 cats and 3 dogs"
-#     words=str2.split()
-#     dig_words= [word for word in words if word.isdigit()]
-#     print(dig_words)
+def check_digs_only():
+    str2="2 cats and 3 dogs"
+    words=str2.split()
+    dig_words= [word for word in words if word.isdigit()]
+    print(dig_words)
 
 # check_digs_only()
 
@@ -104,16 +104,16 @@
 # g,1
 # f,1
 
-# def check_string():
-#     str1="abcdefgabc"
-#     char_count={}
-#     for char in str1:
-#         if char in char_count:
-#             char_count[char]+=1
-#         else:
-#             char_count[char]=1
-#     for char,count in char_count.items():
-#         print(char,":",count)
+def check_string():
+    str1="abcdefgabc"
+    char_count={}
+    for char in str1:
+        if char in char_count:
+            char_count[char]+=1
+        else:
+            char_count[char]=1
+    for char,count in char_count.items():
+        print(char,":",count)
 
 # check_string()
 

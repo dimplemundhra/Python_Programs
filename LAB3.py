@@ -125,11 +125,10 @@ import math
 # 3 1 3 9 27 
 # 4 1 4 16 64
 # 5 1 5 25 125
+
 def print_table():
-    #print(f"{'N':>2} {'1':>2} {'2':>2} {'N^2':>3} {'N^3':>3}")
     for n in range(1, 6):
         print(f"{n:>2} {1:>2} {n:>2} {n**2:>3} {n**3:>3}")
-
 print_table()
 
 
