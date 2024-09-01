@@ -1,0 +1,134 @@
+# # 1. Write a Python program that computes the value of the Gaussian distribution at a given vector X. Hence, plot the effect of varying mean and variance to the normal distribution. 
+
+# import numpy as np
+# import matplotlib.pyplot as plt
+
+# def gaussian_dist(x, mean, variance):
+#     return (1 / np.sqrt(2 * np.pi * variance)) * np.exp(-((x - mean) ** 2) / (2 * variance))
+
+
+# x = np.linspace(-10, 10, 1000) # Vector X
+
+#    # Plotting for different means and variances
+# means = [0, 0, 0]  
+# variances = [0.5, 1, 2]
+
+# plt.figure(figsize=(10, 6))
+# for mean, variance in zip(means, variances):
+#     y = gaussian_dist(x, mean, variance)
+#     plt.plot(x, y, label=f"Mean = {mean}, Variance = {variance}")
+
+# plt.title("Gaussian Distribution")
+# plt.xlabel("X")
+# plt.ylabel("Probability Density")
+# plt.legend()
+# plt.show()
+
+# # 2. Write a python program to implement linear regression. 
+
+# import numpy as np
+# import matplotlib.pyplot as plt
+
+# # Sample data
+# X = np.array([1, 2, 3, 4, 5])
+# y = np.array([1, 3, 2, 3, 5])
+
+# # Implementing Linear Regression
+# def linear_reg(X, y):
+#     X_mean = np.mean(X)
+#     y_mean = np.mean(y)
+    
+#     numerator = np.sum((X - X_mean) * (y - y_mean))
+#     denominator = np.sum((X - X_mean) ** 2)
+    
+#     slope = numerator / denominator
+#     intercept = y_mean - slope * X_mean
+    
+#     return slope, intercept
+
+# slope, intercept = linear_reg(X, y)
+# print(f"Slope: {slope}, Intercept: {intercept}")
+
+# # Plotting the data and regression line
+# plt.scatter(X, y, color="blue", label="Data points")
+# plt.plot(X, slope * X + intercept, color="red", label="Regression line")
+# plt.xlabel("X")
+# plt.ylabel("y")
+# plt.legend()
+# plt.show()
+
+# # 3. Write a python program to implement gradient descent. 
+
+# import numpy as np
+
+# X = np.array([1, 2, 3, 4, 5])
+# y = np.array([1, 3, 2, 3, 5])
+
+#   # Initialize parameters
+# slope = 0
+# intercept = 0
+# learning_rate = 0.01
+# epochs = 1000
+
+#   # Gradient Descent
+# for i in range(epochs):
+#     y_pred = slope * X + intercept
+#     d_slope = (-2/len(X)) * sum(X * (y - y_pred))
+#     d_intercept = (-2/len(X)) * sum(y - y_pred)
+    
+#     slope = slope - learning_rate * d_slope
+#     intercept = intercept - learning_rate * d_intercept
+
+# print(f"Slope after gradient descent: {slope}, Intercept: {intercept}")
+
+#    # Plotting the data and regression line
+# plt.scatter(X, y, color="blue", label="Data points")
+# plt.plot(X, slope * X + intercept, color="red", label="Regression line")
+# plt.xlabel("X")
+# plt.ylabel("y")
+# plt.legend()
+# plt.show()
+
+# 4. Write a python program to classify different flower images using MLP. 
+
+import tensorflow as tf
+from tensorflow.keras import layers, models
+from tensorflow.keras.datasets import cifar10
+from sklearn.preprocessing import LabelBinarizer
+from sklearn.model_selection import train_test_split
+
+  # For simplicity, using CIFAR-10 dataset (flowers may not be part of this dataset, just an example)
+(X_train, y_train), (X_test, y_test) = cifar10.load_data()
+
+  # Preprocessing
+X_train, X_test = X_train / 255.0, X_test / 255.0
+lb = LabelBinarizer()
+y_train = lb.fit_transform(y_train)
+y_test = lb.transform(y_test)
+
+  # MLP Model
+model = models.Sequential([
+    layers.Flatten(input_shape=(32, 32, 3)),
+    layers.Dense(512, activation='relu'),
+    layers.Dense(10, activation='softmax')
+])
+
+model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+model.fit(X_train, y_train, epochs=10, validation_data=(X_test, y_test))
+
+# 5. Write a python program to classify different flower images using the SVM classifier. 
+
+
+# 6. Write a python program to classify different flower images using CNN. 
+
+
+# 7. Write a python program to classify different handwritten character images using the SVM classifier. 
+
+
+# 8. Write a python program to classify different face images using CNN. 
+
+
+# 9. Write a python program to identify a person from the walking style (gait recognition) using convolutional recurrent neural network. 
+
+
+# 10. Write a python program to classify breast cancer from histopathological images using VGG-16 and DenseNet-201 CNN architectures.
